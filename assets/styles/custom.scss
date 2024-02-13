@@ -1,0 +1,15 @@
+// Bootstrap overrides - AAP Newsroom
+
+@import './custom-variables.scss'; // custom variables, Bootstrap overrides
+@import '~bootstrap/scss/bootstrap'; // default Bootstrap from node modules
+@import './custom-buttons.scss'; // custom buttons
+@import './custom-forms.scss'; // custom forms
+@import './custom-modal.scss'; // custom modals
+@import './custom-badge.scss'; // custom badges
+@import './custom-dropdown.scss'; // custom dropdowns
+@import './custom-breadcrumb.scss'; // custom breadcrumbs
+@import './custom-list-group.scss'; // custom list group
+@import './custom-card.scss'; // custom card
+@import './custom-carousel.scss'; // custom carousel
+@import './custom-popover.scss'; // custom popover
+@import './custom-display.scss'; // custom display properties

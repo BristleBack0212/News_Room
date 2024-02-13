@@ -1,0 +1,233 @@
+// Custom card
+
+.card {
+
+    // card in dropdown
+    &--inside-dropdown {
+        border: none;
+        box-shadow: none;
+        min-width: 16rem;
+    
+        .card-footer {
+            border-top: none;
+        }
+    }
+
+    // new card 
+    &.card--home {
+        flex-basis: 100%;
+        border-radius: 0;
+        border: none;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+            box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+
+        &.no-hover {
+            pointer-events: none;
+        }
+        
+        h1.card-title { font-size: 3.125rem; font-weight: 900; line-height: 1.4; }
+        h2.card-title { font-size: 1.625rem; font-weight: 900; line-height: 1.4; }
+        h3.card-title { font-size: 1.25rem; font-weight: 900; line-height: 1.4; }
+        h4.card-title { font-size: 1rem; font-weight: 900; line-height: 1.4; }
+        h5.card-title { font-size: 0.875rem; font-weight: 900; line-height: 1.4; }
+        
+        h1.card-title, h2.card-title { color: #3e4557; }
+        
+        .card-header, 
+        .card-footer {
+            background-color: white;
+        }
+        
+        .card-body {
+            padding: 1rem 1.25rem;
+
+            .wire-articles__item__meta {
+                margin: 10px 0;
+            }
+            .wire-articles__item__text {
+                flex-grow: 1;
+            }
+            &.card-body--one-column {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            &.card-body--two-columns {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                @include sm {
+                    flex-direction: row;
+                }
+            }
+            &.card-body--green-border {
+                border-left: 4px solid #7ed321;
+            }
+            .card-body__sidebar {
+                flex: 0 0 45%;
+                padding: 1rem;
+                display: flex;        
+                align-items: center;
+                @include md {
+                    flex: 0 0 35%;
+                }
+                @include lg {
+                    flex: 0 0 50%;
+                }
+                @include xl {
+                    flex: 0 0 40%;
+                }
+                @include xxl {
+                    flex: 0 0 35%;
+                }
+            }
+            .card-body__content {
+                padding: 1rem;
+            }
+        }
+
+        .card-footer {
+            .wire-articles__item__icon {
+                margin-right: 5px;
+                @include xxl {
+                    margin-right: 7px;
+                }
+            }
+        }
+
+        .card-text {
+            font-size: 1rem;
+            line-height: 1.5;
+
+            &.small {
+                font-size: 0.875rem;
+                font-weight: 300;
+            }
+
+            &.tiny {
+                font-size: 0.8125rem;
+                font-weight: 300;
+            }
+        }
+        
+    }
+
+    // horizontal orientation, image on left side (for bigger screens)
+    &.card--horizontal {
+        
+        @include md {
+            flex-direction: row;
+        }
+        
+        .card-image-left {
+            max-width: 100%;            
+            overflow: hidden;
+            flex: 1 0 auto;
+            align-items: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #2d2d2d;
+
+            @include md {
+                max-width: 50%;
+            }
+            @include lg {
+                max-width: 45%;
+            }
+            img {
+                flex: 1 1 100%;
+                object-fit: cover;                
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    // gallery teaser card
+    &.card--gallery {
+        
+        &:hover {
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .card-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;           
+            background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); 
+            background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); 
+            background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);           
+        }
+        
+        .wire-articles__item__meta-info,
+        .wire-articles__item__meta-info .bold {
+            color: white;
+        }
+
+        .card-img-top {
+            min-height: 300px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    // modifiers
+    .card-text {
+        font-size: 1rem;
+        line-height: 1.5;
+
+        &.small {
+            font-size: 0.875rem;
+            font-weight: 300;
+        }
+
+        &.tiny {
+            font-size: 0.8125rem;
+            font-weight: 300;
+        }
+    }
+
+    .card-body {
+        &.card-body--one-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        &.card-body--two-columns {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            @include sm {
+                flex-direction: row;
+            }
+        }
+        &.card-body--green-border {
+            border-left: 4px solid #7ed321;
+        }
+        .card-body__sidebar {
+            flex: 0 0 20%;
+            padding: 1rem 1.25rem;
+            display: flex;                
+            align-items: center;
+            @include lg {
+                flex: 0 0 35%;
+            }
+        }
+        .card-body__content {
+            padding: 1rem 1.25rem;
+        }
+    }
+
+    a {
+        color: #3e4557;
+        text-decoration: none;
+    }
+}

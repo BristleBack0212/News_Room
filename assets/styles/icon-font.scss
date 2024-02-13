@@ -1,0 +1,278 @@
+@mixin fontFace($family,$src,$style,$weight) {
+	@font-face {
+		font-family: $family;
+		src: url('#{$src}.eot'); // IE9 compat
+		src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+			url('#{$src}.woff') format('woff'), // standards
+			url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+			url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+@include fontFace('aap_newsroom_icons','/static/fonts/aap_newsroom_icons', normal, normal);
+
+@mixin icon-base ($width: 24px, $height: 24px, $line-height: 24px, $font-size: 24px) {
+    display: inline-block;
+    width: $width;
+    height: $height;
+    line-height: $line-height;
+    font-family: 'aap_newsroom_icons';
+    font-size: $font-size;
+    color: $main_blue;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+  }
+
+[class^="icon--"], [class*=" icon--"] {
+    @include icon-base;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'aap_newsroom_icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+    &.icon--gray-light {
+        color: $gray-light;
+    }
+    &.icon--gray {
+        color: $gray-mid;
+    }
+    &.icon--mid-blue {
+        color: $mid-blue;
+    }
+    &.icon--mid-blue-light {
+        color: $mid-blue-light;
+    }
+    &.icon--white {
+        color: #fff;
+    }
+    &.icon--pink {
+        color: $pink;
+    }
+    &.icon--green {
+        color: $green;
+    }
+    &.icon--red {
+        color: $red;
+    }
+    &.icon--orange {
+        color: $orange;
+    }
+    &.icon--cyan {
+        color: $cyan;
+    }
+}
+
+.icon--rotate-90 {
+    transform: rotate(90deg);
+}
+
+.icon--rotate-180 {
+    transform: rotate(180deg);
+}
+
+.icon--alert:before {
+    content: "\e600";
+}
+.icon--bookmark:before {
+    content: "\e601";
+}
+.icon--bookmark-add:before {
+    content: "\e602";
+}
+.icon--calendar:before {
+    content: "\e603";
+}
+.icon--check:before {
+    content: "\e604";
+}
+.icon--close-thin:before {
+    content: "\e605";
+}
+.icon--close-large:before {
+    content: "\e606";
+}
+.icon--cog:before {
+    content: "\e607";
+}
+.icon--copy:before {
+    content: "\e608";
+}
+.icon--dashboard:before {
+    content: "\e609";
+}
+.icon--download:before {
+    content: "\e60a";
+}
+.icon--edit:before {
+    content: "\e60b";
+}
+.icon--grid-view:before {
+    content: "\e60c";
+}
+.icon--hamburger:before {
+    content: "\e60d";
+}
+.icon--list-view-compact:before {
+    content: "\e60e";
+}
+.icon--list-view:before {
+    content: "\e60f";
+}
+.icon--more:before {
+    content: "\e610";
+}
+.icon--personal:before {
+    content: "\e611";
+}
+.icon--photo:before {
+    content: "\e612";
+}
+.icon--print:before {
+    content: "\e613";
+}
+.icon--resize:before {
+    content: "\e614";
+}
+.icon--search:before {
+    content: "\e615";
+}
+.icon--settings:before {
+    content: "\e616";
+}
+.icon--share:before {
+    content: "\e617";
+}
+.icon--sort:before {
+    content: "\e618";
+}
+.icon--text:before {
+    content: "\e619";
+}
+.icon--trash:before {
+    content: "\e61a";
+}
+.icon--bookmark-remove:before {
+    content: "\e61b";
+}
+.icon--refresh:before {
+    content: "\e61c";
+}
+.icon--detach:before {
+    content: "\e61d";
+}
+.icon--report:before {
+    content: "\e61e";
+}
+.icon--home:before {
+    content: "\e61f";
+}
+.icon--coverage-text:before {
+    content: "\e620";
+}
+.icon--coverage-photo:before, .icon--coverage-picture:before {
+    content: "\e621";
+}
+.icon--coverage-video:before,
+.icon--video:before {
+    content: "\e622";
+}
+.icon--coverage-explainer:before {
+    content: "\e623";
+}
+.icon--arrow-right:before {
+    content: "\e624";
+}
+.icon--coverage-infographics:before {
+    content: "\e625";
+}
+.icon--watch:before {
+    content: "\e626";
+}
+.icon--unwatch:before {
+    content: "\e627";
+}
+.icon--watched:before {
+    content: "\e628";
+}
+.icon--coverage-live-video:before {
+    content: "\e629";
+}
+.icon--coverage-audio:before {
+    content: "\e62a";
+}
+.icon--coverage-live-blog:before {
+    content: "\e62b";
+}
+.icon--coverage-unrecognized:before {
+    content: "\e62c";
+}
+.icon--Features:before {
+  content: "\e62d";
+}
+.icon--am:before {
+  content: "\e62e";
+}
+.icon--am-traffic:before {
+  content: "\e62f";
+}
+.icon--am-quote:before {
+  content: "\e630";
+}
+.icon--am-fuel:before {
+  content: "\e631";
+}
+.icon--am-announce:before {
+  content: "\e632";
+}
+.icon--am-alert:before {
+  content: "\e633";
+}
+.icon--am-weather:before {
+  content: "\e634";
+}
+.icon--am-headlines:before {
+  content: "\e635";
+}
+.icon--info:before {
+  content: "\e636";
+}
+.icon--archive:before {
+  content: "\e637";
+}
+.icon--aapX:before {
+  content: "\e638";
+}
+.icon--clock:before {
+  content: "\e639";
+}
+.icon--explainer:before {
+  content: "\e63a";
+}
+.icon--books:before {
+  content: "\e63b";
+}
+.icon--factory:before {
+  content: "\e63c";
+}
+.icon--fact-check:before {
+  content: "\e63d";
+}
+.icon--attachment:before {
+  content: "\e63e";
+}
+.icon--monitoring:before {
+  content: "\e63f";
+}

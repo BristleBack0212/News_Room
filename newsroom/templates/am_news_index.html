@@ -1,0 +1,23 @@
+{% extends "products_layout.html" %}
+
+{% block title %}{{ gettext('AM') }}{% endblock %}
+
+{% block sectioncss %}
+    {{ javascript_tag('am_news_css') | safe }}
+{% endblock %}
+
+{% block breadcrumb %}
+<span class="breadcrumb-item active">{{ gettext('AM') }}</span>
+<span id="nav-breadcrumb" class="breadcrumb-item active breadcrumb-sub-item"></span>
+{% endblock %}
+
+{% block content %}
+<div id="am-news-app" class="content am-news"></div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        amNewsData = {{ data | tojson | safe }};
+    </script>
+    {{ javascript_tag('am_news_js') | safe }}
+{% endblock %}

@@ -1,0 +1,2 @@
+{% extends "email_layout.txt" %}
+{% include "coverage_request_content.txt" %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ gettext('Settings') }}{% endblock %}
+
+{% block breadcrumb %}
+    <span class="breadcrumb-item active">{{ gettext('Settings') }}</span>
+{% endblock %}
+
+{% block contentHeader %}
+
+{% endblock %}
+
+{% block content %}
+<div class="settingsWrap">
+    <div class="settings-inner">
+        <div class='side-navigation' id='settings-menu'>
+            <ul>
+                {% for app in authorized_settings_apps()|sort(attribute='weight') %}
+                    <li>
+                        <a class="side-navigation__btn {{ "active" if setting_type == app._id }}"
+                            href="{{ url_for('settings.app', app_id=app._id) }}">
+                            {{ gettext(app.name) }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="settings-app" class="content"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+var viewData = {{ data | tojson | safe }};
+</script>
+
+{{ javascript_tag('%s_js' % setting_type) | safe }}
+
+{% endblock %}

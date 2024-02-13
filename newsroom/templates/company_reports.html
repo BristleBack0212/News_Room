@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ gettext('Reports') }}{% endblock %}
+
+{% block breadcrumb %}
+    <span class="breadcrumb-item active">{{ gettext('Reports') }}</span>
+{% endblock %}
+
+{% block contentHeader %}
+
+{% endblock %}
+
+{% block content %}
+    <div id="reports-app" class="content"></div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        companyReportsData = {{ data | tojson | safe }};
+    </script>
+    {{ javascript_tag('%s_js' % setting_type) | safe }}
+
+{% endblock %}

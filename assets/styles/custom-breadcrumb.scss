@@ -1,0 +1,46 @@
+// Custom breadcrumbs
+
+.navbar-brand {
+  span.breadcrumb-item {
+    font-size: 0.8125rem; // 13px
+    line-height: 1.1;
+
+    @include sm {
+      font-size: 1rem; // 16px
+    }
+
+    @include xxsm {
+      display: none;
+    }
+  }
+
+  a.breadcrumb-item {
+    font-weight: 300;
+    &:hover {
+      text-decoration: none;
+      cursor: default;
+    }
+    @include sm {
+      letter-spacing: -.1rem;
+    }
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    padding: 0;
+    display: none;
+    @include sm {
+      padding: 0 0.5rem;
+    }
+  }
+}
+.breadcrumb-item.active {
+  color: #9ba4ad;
+
+  @include sm {
+    overflow: visible;
+  }
+}
+
+.breadcrumb-sub-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

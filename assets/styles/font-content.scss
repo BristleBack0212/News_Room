@@ -1,0 +1,37 @@
+// Serif font definition for publishable content parts of the application
+
+.wire-articles__item-headline,
+.wire-articles__item__text,
+.wire-column__preview__headline,
+.wire-column__preview__lead,
+.wire-column__preview__text,
+.wire-articles__versions__headline,
+.wire-column__preview__versions__headline,
+h1.card-title, 
+h2.card-title, 
+h3.card-title, 
+h4.card-title, 
+h5.card-title {
+    font-family: $font-family-serif;
+}
+
+.print-content {
+    h1, h2, h3, h4, h5 {
+        font-family: $font-family-serif;
+    }
+    .print-content__header {
+        margin-bottom: 1.5rem;
+        p {
+            margin-bottom: 0px;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+    .print-content__body {
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+}
+
